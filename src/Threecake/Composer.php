@@ -31,6 +31,7 @@ class Composer {
         $view = $appDir . 'View' . DIRECTORY_SEPARATOR;
         $helper = $view . 'Helper' . DIRECTORY_SEPARATOR;
         $config = $appDir . 'Config' . DIRECTORY_SEPARATOR;
+        $webroot = $appDir . 'webroot' . DIRECTORY_SEPARATOR;
 
         if (is_dir($copyApp)) {
             if ($options['is-windows']) {
@@ -44,15 +45,33 @@ class Composer {
             exec($cp . $templateDir . 'AppModel.inc' . ' ' . $model . 'AppModel.php');
             exec($cp . $templateDir . 'AppHelper.inc' . ' ' . $helper . 'AppHelper.php');
             exec($cp . $templateDir . 'bootstrap.inc' . ' ' . $config . 'bootstrap.php');
+            //exec($cp . $templateDir . 'index.inc' . ' ' . $webroot . 'index.php');
+            self::ccw('%%vendor-dir%%', $options['vendor-dir'], $templateDir . 'index.inc', $webroot . 'index.php' );
+            
         }
     }
 
+    /**
+     * Copy Change and write! boom
+     */
+    protected static function ccw($find, $replace, $inputFile, $outputFile) {
+        
+        $fi = fopen($inputFile, 'r');
+        $source = '';
+        while (!feof($fi)) {
+           $source .= fgets($fi);
+        }
+        fclose($fi);
+        $source = str_replace($find, $replace, $source);
+        file_put_contents($outputFile,$source);
+    }
+    
     /**
      * Get options
      */
     protected static function getOptions($event) {
         $options = array_merge(array(
-            'vendor-dir' => 'vendors',
+            'vendor-dir' => 'vendor',
             'cakephp-app-dir' => 'app',
             'is-windows' => (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? true : false,
                 ), $event->getComposer()->getPackage()->getExtra());
