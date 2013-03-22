@@ -1,6 +1,6 @@
 {
 	"name": "awallef/threecake",
-	"description": "a cakephp start point to use with composer",
+	"description": "a cakephp start point to use with composer and more",
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.2",
