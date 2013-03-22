@@ -13,7 +13,8 @@
 		"post-install-cmd": ["Threecake\\Composer::afterInstall"]
 	},
 	"extra": {
-		"cakephp-app-dir": "app"
+		"cakephp-app-dir": "app",
+                "vendor-dir" : "vendors"
 	},
 	"repositories": {
 		"cakephp-unofficial": {

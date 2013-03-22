@@ -17,13 +17,13 @@ class Composer {
         $appDir = $baseDir . $options['cakephp-app-dir'] . DIRECTORY_SEPARATOR;
 
         // where cakephp was installed with composer
-        $installedDir = $baseDir . 'vendor' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR;
+        $installedDir = $baseDir . $options['vendor-dir'] . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR;
 
         // copy app if it exists
         $copyApp = $installedDir . 'app' . DIRECTORY_SEPARATOR;
 
         // cakephp Trois templates dir
-        $templateDir = $baseDir . 'plugin' . DIRECTORY_SEPARATOR . 'Trois' . DIRECTORY_SEPARATOR . 'composer' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR;
+        $templateDir = $baseDir . 'plugins' . DIRECTORY_SEPARATOR . 'Trois' . DIRECTORY_SEPARATOR . 'composer' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR;
 
         // app folders
         $controller = $appDir . 'Controller' . DIRECTORY_SEPARATOR;
@@ -52,6 +52,7 @@ class Composer {
      */
     protected static function getOptions($event) {
         $options = array_merge(array(
+            'vendor-dir' => 'vendors',
             'cakephp-app-dir' => 'app',
             'is-windows' => (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? true : false,
                 ), $event->getComposer()->getPackage()->getExtra());
