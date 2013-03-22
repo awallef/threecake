@@ -1,5 +1,7 @@
 # Three Cake
 
+[![3xw](http://www.3xw.ch/img/threecake.png)](http://www.3xw.ch)
+
 a cakephp start point to use with with [Composer](http://getcomposer.org/).
 inspired by [Eatcake](https://github.com/shama/eatcake/)
 
