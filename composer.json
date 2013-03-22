@@ -1,17 +1,16 @@
 {
-	"name": "shama/eatcake",
-	"description": "A convenient way to install CakePHP with Composer",
-	"keywords": ["cakephp","installer"],
+	"name": "awallef/threecake",
+	"description": "a cakephp start point to use with composer",
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.2",
 		"cakephp/cakephp": "*"
 	},
 	"autoload": {
-		"psr-0": {"": "src/"}
+		"psr-0": {"": "plugins/Trois/build/composer/"}
 	},
 	"scripts": {
-		"post-install-cmd": ["EatCake\\Composer::afterInstall"]
+		"post-install-cmd": ["ThreecakeComposer::afterInstall"]
 	},
 	"extra": {
 		"cakephp-app-dir": "app"
@@ -21,7 +20,7 @@
 			"type": "package",
 			"package": {
 				"name": "cakephp/cakephp",
-				"version": "2.2.2",
+				"version": "2.3.1",
 				"source": {
 					"url": "git://github.com/cakephp/cakephp.git",
 					"type": "git",
