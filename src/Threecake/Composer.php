@@ -52,7 +52,7 @@ class Composer {
             exec($cp . $templateDir . 'AppModel.inc' . ' ' . $model . 'AppModel.php');
             exec($cp . $templateDir . 'AppHelper.inc' . ' ' . $helper . 'AppHelper.php');
             exec($cp . $templateDir . 'bootstrap.inc' . ' ' . $config . 'bootstrap.php');
-            exec($cp . $templateDir . 'index.inc' . ' ' . $webroot . 'index.php');
+            
             exec($cp . $schemaDir . 'schema.php' . ' ' . $config . 'Schema' . DIRECTORY_SEPARATOR . 'schema.php');
             
             // lib cakePHP
