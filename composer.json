@@ -7,7 +7,7 @@
 		"cakephp/cakephp": "*"
 	},
 	"autoload": {
-		"psr-0": {"": "plugins/Trois/build/composer/"}
+		"psr-0": {"": "src/"}
 	},
 	"scripts": {
 		"post-install-cmd": ["Threecake\\Composer::afterInstall"]
