@@ -9,3 +9,4 @@ app/[Cc]onfig/database.php
 *.DS_Store
 *.sass-cache*
 nbproject/*
+vendors/*

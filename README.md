@@ -8,16 +8,16 @@ inspired by [Eatcake](https://github.com/shama/eatcake/)
 ## Manual Install
 
 * Install Composer with: `curl -s https://getcomposer.org/installer | php`
-* Then create a new project with: `php composer.phar create-project awallef/threecake path/`
+* Then create a new project with: `php composer.phar create-project awallef/threecake path/ -s"dev"`
+* Change the value of 'Security.salt' in app/Config/core.php 
+* Change the value of 'Security.cipherSeed' in app/Config/core.php
+* Rename APP/Config/database.php.default to APP/Config/database.php
+* Create the basic tables Trois needs `.path/app/Console/cake schema create`
 
 ## Updating
 
 Update CakePHP later with: `php composer.phar update` from inside your project directory.
 
 ## What?
-
-Using Composer, this will download CakePHP and set it up. The CakePHP core will
-be located in the `vendor/cakephp/cakephp/lib/Cake` folder. The included
-`index.php` file wil set the `CAKE_CORE_INCLUDE_PATH` to that folder.
 
 This uses the official CakePHP repository (look in the composer.json).

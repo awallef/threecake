@@ -28,7 +28,10 @@ class Composer {
         
         // cakephp Trois templates dir
         $templateDir = $baseDir . 'plugins' . DIRECTORY_SEPARATOR . 'Trois' . DIRECTORY_SEPARATOR . 'composer' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR;
-
+        
+        // schema dir
+        $schemaDir = $baseDir . 'plugins' . DIRECTORY_SEPARATOR . 'Trois' . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'Schema' . DIRECTORY_SEPARATOR;
+        
         // app folders
         $controller = $appDir . 'Controller' . DIRECTORY_SEPARATOR;
         $model = $appDir . 'Model' . DIRECTORY_SEPARATOR;
@@ -50,6 +53,7 @@ class Composer {
             exec($cp . $templateDir . 'AppHelper.inc' . ' ' . $helper . 'AppHelper.php');
             exec($cp . $templateDir . 'bootstrap.inc' . ' ' . $config . 'bootstrap.php');
             exec($cp . $templateDir . 'index.inc' . ' ' . $webroot . 'index.php');
+            exec($cp . $schemaDir . 'schema.php' . ' ' . $config . 'Schema' . DIRECTORY_SEPARATOR . 'schema.php');
             
             // lib cakePHP
             exec( $cp . $copyLib . ' ' . $libDir);
