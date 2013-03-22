@@ -21,7 +21,11 @@ class Composer {
 
         // copy app if it exists
         $copyApp = $installedDir . 'app' . DIRECTORY_SEPARATOR;
-
+        
+        // copy lib if it exists
+        $copyLib = $installedDir . 'lib' . DIRECTORY_SEPARATOR;
+        $libDir = $baseDir . 'lib' . DIRECTORY_SEPARATOR;
+        
         // cakephp Trois templates dir
         $templateDir = $baseDir . 'plugins' . DIRECTORY_SEPARATOR . 'Trois' . DIRECTORY_SEPARATOR . 'composer' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR;
 
@@ -45,9 +49,11 @@ class Composer {
             exec($cp . $templateDir . 'AppModel.inc' . ' ' . $model . 'AppModel.php');
             exec($cp . $templateDir . 'AppHelper.inc' . ' ' . $helper . 'AppHelper.php');
             exec($cp . $templateDir . 'bootstrap.inc' . ' ' . $config . 'bootstrap.php');
-            //exec($cp . $templateDir . 'index.inc' . ' ' . $webroot . 'index.php');
-            unlink( $webroot . 'index.php' );
-            self::ccw('%%vendor-dir%%', $options['vendor-dir'], $templateDir . 'index.inc', $webroot . 'index.php' );
+            exec($cp . $templateDir . 'index.inc' . ' ' . $webroot . 'index.php');
+            
+            // lib cakePHP
+            exec( $cp . $copyLib . ' ' . $libDir);
+            
             
         }
     }
