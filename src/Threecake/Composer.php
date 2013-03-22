@@ -46,6 +46,7 @@ class Composer {
             exec($cp . $templateDir . 'AppHelper.inc' . ' ' . $helper . 'AppHelper.php');
             exec($cp . $templateDir . 'bootstrap.inc' . ' ' . $config . 'bootstrap.php');
             //exec($cp . $templateDir . 'index.inc' . ' ' . $webroot . 'index.php');
+            unlink( $webroot . 'index.php' );
             self::ccw('%%vendor-dir%%', $options['vendor-dir'], $templateDir . 'index.inc', $webroot . 'index.php' );
             
         }
