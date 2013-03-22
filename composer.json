@@ -4,7 +4,8 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.2",
-		"cakephp/cakephp": "*"
+		"cakephp/cakephp": "*",
+                "awallef/moderncake": "dev-master"
 	},
 	"autoload": {
 		"psr-0": {"": "src/"}
