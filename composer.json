@@ -10,7 +10,7 @@
 		"psr-0": {"": "plugins/Trois/build/composer/"}
 	},
 	"scripts": {
-		"post-install-cmd": ["ThreecakeComposer::afterInstall"]
+		"post-install-cmd": ["Threecake\\Composer::afterInstall"]
 	},
 	"extra": {
 		"cakephp-app-dir": "app"

@@ -1,5 +1,7 @@
 <?php
-class ThreecakeComposer {
+namespace Threecake;
+
+class Composer {
 
 	/**
 	 * Called after CakePHP was installed
