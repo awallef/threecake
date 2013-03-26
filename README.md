@@ -1,6 +1,6 @@
 # Three Cake
 
-[![3xw](https://raw.github.com/awallef/threecake/master/plugins/Trois/composer/data/logo/logo.png)](http://www.3xw.ch)
+[![3xw](https://raw.github.com/awallef/trois/master/Trois/composer/data/logo/logo.png)](http://www.3xw.ch)
 
 a cakephp start point to use with with [Composer](http://getcomposer.org/).
 inspired by [Eatcake](https://github.com/shama/eatcake/)
