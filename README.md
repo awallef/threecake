@@ -41,4 +41,9 @@ Update CakePHP later with: `php composer.phar update` from inside your project d
 
 ## What?
 
-This uses the official CakePHP repository (look in the composer.json).
+Threecake loads & installs 3 packages:
+[cakephp/cakephp](https://github.com/cakephp/cakephp/) the cakePHP framework
+[awallef/trois](https://github.com/awallef/trois/) an admin and mediafile plugin for cakePHP
+[awallef/moderncake](https://github.com/awallef/moderncake/) a modern start point for cakePHP using tools such as compass, grunt, twitter/bootstrap etc...
+
+
