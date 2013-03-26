@@ -20,25 +20,15 @@ class Composer {
         $installedDir = $baseDir . $options['vendor-dir'] . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR;
 
         // copy app if it exists
-        $copyApp = $installedDir . 'app' . DIRECTORY_SEPARATOR;
+        $copyApp = $installedDir . $options['cakephp-app-dir'] . DIRECTORY_SEPARATOR;
         
         // copy lib if it exists
         $copyLib = $installedDir . 'lib' . DIRECTORY_SEPARATOR;
         $libDir = $baseDir . 'lib' . DIRECTORY_SEPARATOR;
         
-        // cakephp Trois templates dir
-        $templateDir = $baseDir . 'plugins' . DIRECTORY_SEPARATOR . 'Trois' . DIRECTORY_SEPARATOR . 'composer' . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'cakephp' . DIRECTORY_SEPARATOR;
-        
-        // schema dir
-        $schemaDir = $baseDir . 'plugins' . DIRECTORY_SEPARATOR . 'Trois' . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'Schema' . DIRECTORY_SEPARATOR;
-        
-        // app folders
-        $controller = $appDir . 'Controller' . DIRECTORY_SEPARATOR;
-        $model = $appDir . 'Model' . DIRECTORY_SEPARATOR;
-        $view = $appDir . 'View' . DIRECTORY_SEPARATOR;
-        $helper = $view . 'Helper' . DIRECTORY_SEPARATOR;
-        $config = $appDir . 'Config' . DIRECTORY_SEPARATOR;
-        $webroot = $appDir . 'webroot' . DIRECTORY_SEPARATOR;
+        // copy plugin
+        $copyPlugins = $installedDir . 'plugins' . DIRECTORY_SEPARATOR;
+        $pluginsDir = $baseDir . 'plugins' . DIRECTORY_SEPARATOR;
 
         if (is_dir($copyApp)) {
             if ($options['is-windows']) {
@@ -47,16 +37,15 @@ class Composer {
                 $cp = 'cp -R ';
             }
             exec( $cp . $copyApp . ' ' . $appDir);
-            // three
-            exec($cp . $templateDir . 'AppController.inc' . ' ' . $controller . 'AppController.php');
-            exec($cp . $templateDir . 'AppModel.inc' . ' ' . $model . 'AppModel.php');
-            exec($cp . $templateDir . 'AppHelper.inc' . ' ' . $helper . 'AppHelper.php');
-            exec($cp . $templateDir . 'bootstrap.inc' . ' ' . $config . 'bootstrap.php');
-            
-            exec($cp . $schemaDir . 'schema.php' . ' ' . $config . 'Schema' . DIRECTORY_SEPARATOR . 'schema.php');
             
             // lib cakePHP
             exec( $cp . $copyLib . ' ' . $libDir);
+            
+            // lib cakePHP
+            exec( $cp . $copyLib . ' ' . $libDir);
+            
+            // plugins cakePHP
+            exec( $cp . $copyPlugins . ' ' . $pluginsDir);
             
             
         }

@@ -5,7 +5,8 @@
 	"require": {
 		"php": ">=5.2",
 		"cakephp/cakephp": "*",
-                "awallef/moderncake": "dev-master"
+        "awallef/trois": "dev-master",
+        "awallef/moderncake": "dev-master"
 	},
 	"autoload": {
 		"psr-0": {"": "src/"}
