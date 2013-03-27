@@ -11,9 +11,9 @@ inspired by [Eatcake](https://github.com/shama/eatcake/)
 * Then create a new project with: `php composer.phar create-project awallef/threecake path/ -s"dev"`
 
 ## Install the familly 
+* avoid using sudo each time: `sudo chown -R $USER /usr/local` ( UNIX  )
 * [Install nodejs](https://github.com/joyent/node/wiki/Installation)
 * [Install ruby/gem](http://docs.rubygems.org/read/chapter/3)
-* avoid using sudo each time: `sudo chown -R $USER /usr/local`
 * Install compass: `gem install compass`
 * Install grunt `npm install -g grunt-cli`
 * Install bower: `npm install bower -g`
