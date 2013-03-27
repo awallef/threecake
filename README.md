@@ -13,10 +13,10 @@ inspired by [Eatcake](https://github.com/shama/eatcake/)
 ## Install the familly 
 * [Install nodejs](https://github.com/joyent/node/wiki/Installation)
 * [Install ruby/gem](http://docs.rubygems.org/read/chapter/3)
+* avoid using sudo each time: `sudo chown -R $USER /usr/local`
 * Install compass: `gem install compass`
 * Install grunt `npm install -g grunt-cli`
 * Install bower: `npm install bower -g`
-* Install dependencies: `npm install && bower install`
 
 ## Configure cake PHP
 * Change the value of 'Security.salt' in app/Config/core.php 
@@ -26,8 +26,11 @@ inspired by [Eatcake](https://github.com/shama/eatcake/)
 
 ## Usage
 
-Merge this repo into your CakePHP project app folder. The required files in this repo
-are: `Gruntfile.js` and `package.json`.
+Edit those two file as you need
+
+`Gruntfile.js` and `package.json`.
+
+Run `npm install && bower install` to install all dependencies your app needs
 
 Run `grunt` to compile your scss and js.
 
@@ -37,7 +40,7 @@ Run `grunt watch` to compile your files as you save.
 
 ## Updating
 
-Update CakePHP later with: `php composer.phar update` from inside your project directory.
+Update all you need later with: `php composer.phar update` from inside your project directory.
 
 ## What?
 
