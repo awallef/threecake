@@ -19,16 +19,19 @@ inspired by [Eatcake](https://github.com/shama/eatcake/)
 * Install bower: `npm install bower -g`
 
 ## Configure cake PHP
-* Change the value of 'Security.salt' in app/Config/core.php 
-* Change the value of 'Security.cipherSeed' in app/Config/core.php
-* Rename APP/Config/database.php.default to APP/Config/database.php
-* Create the basic tables Trois needs `.path/app/Console/cake schema create`
+* Change the value of 'Security.salt' in `app/Config/core.php` 
+* Change the value of 'Security.cipherSeed' in `app/Config/core.php`
+* Rename `app/Config/database.php.default` to `app/Config/database.php`
+* Replace your DB connection values in `app/Config/database.php`
+* Create the basic tables Trois plugin needs `.path/app/Console/cake schema create`
 
 ## Usage
 
-Edit those two file as you need
+Edit those two file as you need to:
 
 `Gruntfile.js` and `package.json`.
+
+Open your terminal and from inside your app:
 
 Run `npm install && bower install` to install all dependencies your app needs
 
