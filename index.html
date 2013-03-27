@@ -45,6 +45,7 @@ inspired by <a href="https://github.com/shama/eatcake/">Eatcake</a></p>
 </ul><h2>Install the familly</h2>
 
 <ul>
+<li>avoid using sudo each time: <code>sudo chown -R $USER /usr/local</code> ( UNIX  )</li>
 <li><a href="https://github.com/joyent/node/wiki/Installation">Install nodejs</a></li>
 <li><a href="http://docs.rubygems.org/read/chapter/3">Install ruby/gem</a></li>
 <li>Install compass: <code>gem install compass</code>
@@ -53,20 +54,27 @@ inspired by <a href="https://github.com/shama/eatcake/">Eatcake</a></p>
 </li>
 <li>Install bower: <code>npm install bower -g</code>
 </li>
-<li>Install dependencies: <code>npm install &amp;&amp; bower install</code>
-</li>
 </ul><h2>Configure cake PHP</h2>
 
 <ul>
-<li>Change the value of 'Security.salt' in app/Config/core.php </li>
-<li>Change the value of 'Security.cipherSeed' in app/Config/core.php</li>
-<li>Rename APP/Config/database.php.default to APP/Config/database.php</li>
-<li>Create the basic tables Trois needs <code>.path/app/Console/cake schema create</code>
+<li>Change the value of 'Security.salt' in <code>app/Config/core.php</code> </li>
+<li>Change the value of 'Security.cipherSeed' in <code>app/Config/core.php</code>
+</li>
+<li>Rename <code>app/Config/database.php.default</code> to <code>app/Config/database.php</code>
+</li>
+<li>Replace your DB connection values in <code>app/Config/database.php</code>
+</li>
+<li>Create the basic tables Trois plugin needs <code>.path/app/Console/cake schema create</code>
 </li>
 </ul><h2>Usage</h2>
 
-<p>Merge this repo into your CakePHP project app folder. The required files in this repo
-are: <code>Gruntfile.js</code> and <code>package.json</code>.</p>
+<p>Edit those two file as you need to:</p>
+
+<p><code>Gruntfile.js</code> and <code>package.json</code>.</p>
+
+<p>Open your terminal and from inside your app:</p>
+
+<p>Run <code>npm install &amp;&amp; bower install</code> to install all dependencies your app needs</p>
 
 <p>Run <code>grunt</code> to compile your scss and js.</p>
 
@@ -76,7 +84,7 @@ are: <code>Gruntfile.js</code> and <code>package.json</code>.</p>
 
 <h2>Updating</h2>
 
-<p>Update CakePHP later with: <code>php composer.phar update</code> from inside your project directory.</p>
+<p>Update all you need later with: <code>php composer.phar update</code> from inside your project directory.</p>
 
 <h2>What?</h2>
 
